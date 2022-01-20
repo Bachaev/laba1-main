@@ -1,4 +1,8 @@
-all:
-	g++ -std=c++11 -o lab1.exe main.cpp
+all: app.exe
+	
+app.exe:main.obj
+	link /out:app.exe main.obj
+main.obj: main.cpp
+	cl /c main.cpp
 clean:
 	del *.exe
